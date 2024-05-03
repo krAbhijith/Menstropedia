@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenstroPedia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            :root {
+                --primary: #F5F7F8;
+                --secondary: #F4CE14;
+                --tertiary: #495E57;
+                --darkest: #45474B;
+            }
+    
+            body {
+                background-color: var(--primary);
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+            }
+    
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 5rem;
+                background-color: var(--tertiary);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 1000;
+            }
+    
+            nav>.left {
+                display: flex;
+                margin-left: 6rem;
+                justify-content: space-between;
+            }
+    
+            .circle-avatar {
+                width: 56px;
+                height: 56px;
+                border-radius: 28px;
+                align-self: center;
+            }
+    
+            .user-title {
+                align-self: center;
+                text-decoration: none;
+                font-size: 24px;
+                margin-left: 12px;
+                color: white;
+                text-transform: uppercase;
+            }
+    
+            .btn-post {
+                border: none;
+                background-color: var(--secondary);
+                padding: 6px 12px;
+                border-radius: 4px;
+                color: var(--darkest);
+                text-decoration: none;
+                font-size: large;
+                font-weight: bold;
+                margin-right: 2rem;
+                transition: all .12s ease;
+                align-self: flex-end;
+                transition: all .12s ease;
+            }
+    
+            .btn-post:hover {
+                scale: 1.02;
+            }
+    
+            form {
+                margin-top: 8rem;
+                display: flex;
+                flex-direction: column;
+                background-color: var(--tertiary);
+                padding: 2rem;
+                width: 40%;
+                gap: 2rem;
+            }
+    
+            .inp-title {
+                padding: 12px 0;
+            }
+    
+            .inp {
+                align-self: flex-start;
+                width: 100%;
+                padding-left: 8px;
+            }
+    
+            #blog-body {
+                resize: none;
+                height: 18rem;
+            }
+    
+            textarea {
+                resize: none;
+            }
+            section{
+                margin-top: 8rem;
+            }
+            .card{
+                padding: 12px;
+            }
+        </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="left">
+            <a href="{% url 'home' %}"><img src="{% static 'images/man.png' %}" alt="avatar" class="circle-avatar"></a>
+            <a href="#" class="user-title">{{request.user.first_name}}</a>
+        </div>
+    </nav>
+    <section class="container ">
+        <div class="row">
+            <div class="card m-4">
+                <div class="card-head">
+                    <h5 class="card-title">Sanitary Napkins</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Soft and absorbent pads for comfortable and leak-free periods.</p>
+                    <a href="https://www.flipkart.com/everteen-period-care-xxl-soft-neem-safflower-1-pack-40-pads-sanitary-pad/p/itm69a3c7dcf92c5?pid=SPPFH2GTHYHWW774&lid=LSTSPPFH2GTHYHWW7741XGFEV&marketplace=FLIPKART&store=g9b%2Fiph%2Fjth&srno=b_1_3&otracker=browse&fm=organic&iid=8d385186-a9fc-4c95-bb70-66a656d26e81.SPPFH2GTHYHWW774.SEARCH&ppt=browse&ppn=browse&ssid=zy9x8sddkw0000001714695232332" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+            <div class="card m-4">
+                <div class="card-head">
+                    <h5 class="card-title">Menstrual Cups</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Reusable cups for eco-friendly and comfortable period management.</p>
+                    <a href="https://www.flipkart.com/savvy-small-reusable-menstrual-cup/p/itm058bb1232b26f?pid=MENGT654XFYPKCBH&lid=LSTMENGT654XFYPKCBHMVMEBD&marketplace=FLIPKART&q=mestural+cup&store=g9b%2Fiph%2Fflg&srno=s_1_8&otracker=AS_Query_OrganicAutoSuggest_1_7_na_na_na&otracker1=AS_Query_OrganicAutoSuggest_1_7_na_na_na&fm=search-autosuggest&iid=en_PbTRzu2nCo7b6gRJ5dJJ5rloCluP7kWJOFjU2w5Xuks-Xmxq9Q3NrGzMr6iakMZOyYk1m5E1dtYM10MymdMoZxhTy0lUJ14SzoMSv_CzLF0%3D&ppt=sp&ppn=sp&ssid=r16m1pa8i80000001714695267007&qH=3951083639fa27f0" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+            <div class="card m-4">
+                <div class="card-head">
+                    <h5 class="card-title">Menstrual Panties</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Absorbent panties with built-in liners for comfortable period wear.</p>
+                    <a href="https://www.flipkart.com/fiveflag-women-hipster-multicolor-panty/p/itmcf4b5079dd51d?pid=PANGHCZGSKD25AUG&lid=LSTPANGHCZGSKD25AUGJVDX5U&marketplace=FLIPKART&q=period+panty&store=clo%2Fqfl&srno=s_1_1&otracker=AS_QueryStore_OrganicAutoSuggest_1_9_na_na_ps&otracker1=AS_QueryStore_OrganicAutoSuggest_1_9_na_na_ps&fm=search-autosuggest&iid=3351b133-b4fd-495a-8189-7fb5959a0337.PANGHCZGSKD25AUG.SEARCH&ppt=sp&ppn=sp&ssid=tz79j1it740000001714695310974&qH=3b6186361af8d019" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</html>
